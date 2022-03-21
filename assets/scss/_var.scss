@@ -1,0 +1,16 @@
+// Container & Breakpoints
+@use "sass:math";
+$containerWidth: 1110 + px;
+$breakpoint1400: 1399.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint480: 479.98 + px;
+
+
+// Colors
+$maindark: #00CCC0;
+$mainlight: #B0EFEB;
+$borderline: #00B5AA;
+$white: #ffffff;
+$lightgray: #9b9b9b;
+$gray: #838383;

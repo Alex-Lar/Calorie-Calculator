@@ -1,0 +1,234 @@
+// .main {
+
+//     // &__inner {}
+// }
+
+
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+
+    margin-bottom: 50px;
+
+    &__item {
+        &-first {
+            position: relative;
+            width: 100%;
+            max-width: 45px;
+            height: 45px;
+            padding-top: 6px;
+
+            text-align: center;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 26px;
+
+            color: $maindark;
+            background-color: $white;
+            border: 3px solid $maindark;
+            border-radius: 50%;
+        }
+    }
+
+
+    &__item {
+        &-second {
+            width: 100%;
+            max-width: 45px;
+            height: 45px;
+            padding-top: 6px;
+
+            text-align: center;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 26px;
+
+            color: $white;
+            background-color: $maindark;
+            border: 3px solid $white;
+            border-radius: 50%;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        top: 17px;
+        left: 41px;
+        z-index: -1;
+
+        border-radius: 0 4px 4px 0;
+        width: 60px;
+        height: 5px;
+        background-color: $maindark;
+    }
+}
+
+
+
+// Calculator
+
+.calculator {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 37px;
+    width: 100%;
+    max-width: 336px;
+    height: 350px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 3px;
+        height: 350px;
+        background-color: $maindark;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        display: block;
+        width: 3px;
+        height: 350px;
+        background-color: $maindark;
+    }
+}
+
+.calc-form {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // position: relative;
+
+    &__btn {
+        // position: absolute;
+        // bottom: 20px;
+        // left: 90px;
+        margin-top: 79px;
+
+        padding: 12px 31px;
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: $maindark;
+        background-color: $white;
+        border: 2px solid $maindark;
+        border-radius: 4px;
+        transition: all .1s linear;
+
+        &:hover {
+            background-color: $maindark;
+            color: $white;
+            box-shadow: 1px 2px 8px $mainlight;
+        }
+
+        &:active {
+            background-color: #00ada2;
+            border-color: #00ada2;
+            box-shadow: 0 3px 8px $mainlight;
+        }
+    }
+}
+
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+    max-width: 336px;
+    height: 176px;
+
+    .input {
+        margin-bottom: 34px;
+        padding: 8px 0;
+        width: 100%;
+        max-width: 254px;
+        height: auto;
+
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $gray;
+
+        background-color: transparent;
+        border: 2px solid transparent;
+        border-bottom: 2px solid $mainlight;
+        outline: none;
+        transition: all .3s linear, opacity .4s ease-in;
+
+        &:nth-child(3) {
+            margin-bottom: 0;
+        }
+
+        &::placeholder {
+            text-align: center;
+            font-weight: 300;
+            font-size: 13px;
+            line-height: 16px;
+            color: $lightgray;
+        }
+
+        &:focus {
+            border-bottom: 2px solid $maindark;
+        }
+    }
+
+}
+
+
+
+.output {
+    padding-top: 18px;
+    width: 100%;
+    max-width: 336px;
+    height: 176px;
+
+    &__title {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 46px;
+        color: $maindark;
+
+        &:after {
+            content: '';
+            display: block;
+            margin: 35px auto;
+            width: 100px;
+            height: 3px;
+            background-color: $mainlight;
+        }
+    }
+
+
+    &__text {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $maindark;
+    }
+}

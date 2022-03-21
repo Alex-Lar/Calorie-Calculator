@@ -1,0 +1,33 @@
+@import "var";
+
+body {
+    font-family: 'Montserrat';
+}
+
+// Container
+.container {
+    max-width: $containerWidth; //1080px
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint992) {
+        max-width: 970px;
+    }
+
+    @media (max-width: $breakpoint768) {
+        max-width: 750px;
+    }
+
+    @media (max-width: $breakpoint480) {
+        max-width: none;
+    }
+}
+
+.common__display-none {
+    display: none;
+}
+
+
+
+
+

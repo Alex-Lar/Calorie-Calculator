@@ -1,0 +1,818 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+@use "sass:math";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+@-webkit-keyframes moving-line-forward {
+  0% {
+    width: 60px;
+  }
+  60% {
+    width: 92px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+    border-radius: 4px 0 0 4px;
+    width: 92px;
+  }
+}
+
+@keyframes moving-line-forward {
+  0% {
+    width: 60px;
+  }
+  60% {
+    width: 92px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+    border-radius: 4px 0 0 4px;
+    width: 92px;
+  }
+}
+
+@-webkit-keyframes bar-forward {
+  0% {
+    color: #ffffff;
+    background-color: #00CCC0;
+    border-color: #ffffff;
+  }
+  100% {
+    color: #00CCC0;
+    background-color: #ffffff;
+    border-color: #00CCC0;
+  }
+}
+
+@keyframes bar-forward {
+  0% {
+    color: #ffffff;
+    background-color: #00CCC0;
+    border-color: #ffffff;
+  }
+  100% {
+    color: #00CCC0;
+    background-color: #ffffff;
+    border-color: #00CCC0;
+  }
+}
+
+@-webkit-keyframes moving-line-back {
+  0% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  60% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 92px;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 60px;
+  }
+}
+
+@keyframes moving-line-back {
+  0% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  60% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 92px;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 60px;
+  }
+}
+
+@-webkit-keyframes bar-back {
+  0% {
+    color: #00CCC0;
+    background-color: #ffffff;
+    border-color: #00CCC0;
+  }
+  100% {
+    color: #ffffff;
+    background-color: #00CCC0;
+    border-color: #ffffff;
+  }
+}
+
+@keyframes bar-back {
+  0% {
+    color: #00CCC0;
+    background-color: #ffffff;
+    border-color: #00CCC0;
+  }
+  100% {
+    color: #ffffff;
+    background-color: #00CCC0;
+    border-color: #ffffff;
+  }
+}
+
+@-webkit-keyframes input-show {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes input-show {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes output-show {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes output-show {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes output-hide {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes output-hide {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+.input__show {
+  -webkit-animation-name: input-show;
+          animation-name: input-show;
+  -webkit-animation-duration: .9s;
+          animation-duration: .9s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.input__hide {
+  opacity: 0;
+}
+
+.input__abs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.output__show {
+  -webkit-animation-name: output-show;
+          animation-name: output-show;
+  -webkit-animation-duration: .9s;
+          animation-duration: .9s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.output__hide {
+  -webkit-animation-name: output-hide;
+          animation-name: output-hide;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.bar__forward {
+  -webkit-animation-name: bar-forward;
+          animation-name: bar-forward;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.bar__forward-reverse {
+  -webkit-animation-name: bar-forward;
+          animation-name: bar-forward;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  animation-direction: reverse;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.line-move__forward {
+  -webkit-animation-name: moving-line-forward;
+          animation-name: moving-line-forward;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
+  -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+          animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.bar__back {
+  -webkit-animation-name: bar-back;
+          animation-name: bar-back;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.bar__back-reverse {
+  -webkit-animation-name: bar-back;
+          animation-name: bar-back;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  animation-direction: reverse;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.line-move__back {
+  -webkit-animation-name: moving-line-back;
+          animation-name: moving-line-back;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
+  -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+          animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@use "sass:math";
+.header {
+  margin-bottom: 50px;
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  padding: 13px 22px 19px 20px;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  background-color: #00CCC0;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.logo__title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 101px;
+}
+
+.links__item {
+  padding: 7px;
+  background-color: #00CCC0;
+  border: 2px solid #00B5AA;
+  border-radius: 50%;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.links__item .fa-palette {
+  width: 21px;
+  height: 21px;
+  color: #ffffff;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.links__item .fa-github {
+  width: 21px;
+  height: 21px;
+  color: #ffffff;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.links__item:hover {
+  background-color: #ffffff;
+}
+
+.links__item:hover .fa-palette {
+  color: #00CCC0;
+}
+
+.links__item:hover .fa-github {
+  color: #00CCC0;
+}
+
+.desk__display-none {
+  display: none;
+}
+
+@use "sass:math";
+body {
+  font-family: 'Montserrat';
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .container {
+    max-width: none;
+  }
+}
+
+.common__display-none {
+  display: none;
+}
+
+@use "sass:math";
+@media (max-width: 479.98px) {
+  .mob__display-none {
+    display: none;
+  }
+  .desk__display-none {
+    display: block;
+  }
+  .header__inner {
+    padding: 18px 20px;
+    background-color: #00CCC0;
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  }
+  .logo {
+    padding: 0;
+    width: 0;
+    max-width: 0;
+    height: auto;
+    background-color: none;
+    border-radius: 0;
+  }
+  .links {
+    max-width: 98px;
+  }
+  .links__item {
+    background-color: #ffffff;
+  }
+  .links__item .fa-palette {
+    color: #00CCC0;
+  }
+  .links__item .fa-github {
+    color: #00CCC0;
+  }
+}
+
+.steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 90px;
+  margin-bottom: 50px;
+}
+
+.steps__item-first {
+  position: relative;
+  width: 100%;
+  max-width: 45px;
+  height: 45px;
+  padding-top: 6px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+  color: #00CCC0;
+  background-color: #ffffff;
+  border: 3px solid #00CCC0;
+  border-radius: 50%;
+}
+
+.steps__item-second {
+  width: 100%;
+  max-width: 45px;
+  height: 45px;
+  padding-top: 6px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+  color: #ffffff;
+  background-color: #00CCC0;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+.steps__line {
+  position: absolute;
+  top: 17px;
+  left: 41px;
+  z-index: -1;
+  border-radius: 0 4px 4px 0;
+  width: 60px;
+  height: 5px;
+  background-color: #00CCC0;
+}
+
+.calculator {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 37px;
+  width: 100%;
+  max-width: 336px;
+  height: 350px;
+}
+
+.calculator:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 3px;
+  height: 350px;
+  background-color: #00CCC0;
+}
+
+.calculator:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3px;
+  height: 350px;
+  background-color: #00CCC0;
+}
+
+.calc-form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calc-form__btn {
+  margin-top: 79px;
+  padding: 12px 31px;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #00CCC0;
+  background-color: #ffffff;
+  border: 2px solid #00CCC0;
+  border-radius: 4px;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.calc-form__btn:hover {
+  background-color: #00CCC0;
+  color: #ffffff;
+  -webkit-box-shadow: 1px 2px 8px #B0EFEB;
+          box-shadow: 1px 2px 8px #B0EFEB;
+}
+
+.calc-form__btn:active {
+  background-color: #00ada2;
+  border-color: #00ada2;
+  -webkit-box-shadow: 0 3px 8px #B0EFEB;
+          box-shadow: 0 3px 8px #B0EFEB;
+}
+
+.inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 336px;
+  height: 176px;
+}
+
+.inputs .input {
+  margin-bottom: 34px;
+  padding: 8px 0;
+  width: 100%;
+  max-width: 254px;
+  height: auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #838383;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #B0EFEB;
+  outline: none;
+  -webkit-transition: all .3s linear, opacity .4s ease-in;
+  transition: all .3s linear, opacity .4s ease-in;
+}
+
+.inputs .input:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.inputs .input::-webkit-input-placeholder {
+  text-align: center;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #9b9b9b;
+}
+
+.inputs .input:-ms-input-placeholder {
+  text-align: center;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #9b9b9b;
+}
+
+.inputs .input::-ms-input-placeholder {
+  text-align: center;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #9b9b9b;
+}
+
+.inputs .input::placeholder {
+  text-align: center;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #9b9b9b;
+}
+
+.inputs .input:focus {
+  border-bottom: 2px solid #00CCC0;
+}
+
+.output {
+  padding-top: 18px;
+  width: 100%;
+  max-width: 336px;
+  height: 176px;
+}
+
+.output__title {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 46px;
+  color: #00CCC0;
+}
+
+.output__title:after {
+  content: '';
+  display: block;
+  margin: 35px auto;
+  width: 100px;
+  height: 3px;
+  background-color: #B0EFEB;
+}
+
+.output__text {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #00CCC0;
+}

@@ -1,0 +1,80 @@
+@import 'var';
+
+.header {
+    margin-bottom: 50px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.logo {
+    padding: 13px 22px 19px 20px;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    background-color: $maindark;
+    border-radius: 0px 0px 8px 8px;
+
+
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 1;
+        color: $white;
+    }
+}
+
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 101px;
+
+    &__item {
+        padding: 7px;   
+        background-color: $maindark;
+        border: 2px solid $borderline;
+        border-radius: 50%;
+        transition: all .2s linear;
+
+        .fa-palette {
+            width: 21px;
+            height: 21px;
+            color: $white;
+            transition: all .2s linear;
+        }
+
+        .fa-github {
+            width: 21px;
+            height: 21px;
+            color: $white;
+            transition: all .2s linear;
+        }
+
+        &:hover {
+            background-color: $white;
+        }
+
+        &:hover .fa-palette {
+            color: $maindark;
+        }
+
+        &:hover .fa-github {
+            color: $maindark;
+        }
+    }
+}
+
+.desk__display-none {
+    display: none;
+}

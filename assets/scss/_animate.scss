@@ -1,0 +1,206 @@
+@keyframes moving-line-forward {
+    0% {
+        width: 60px;
+    }
+    60% {
+        width: 92px;
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(30px);
+        border-radius: 4px 0 0 4px;
+        width: 92px;
+    }
+}
+
+
+@keyframes bar-forward {
+    0% {
+        color: $white;
+        background-color: $maindark;
+        border-color: $white;
+    }
+
+    100% {
+        color: $maindark;
+        background-color: $white;
+        border-color: $maindark;
+    }
+}
+
+
+// Reverse Animations
+
+
+@keyframes moving-line-back {
+    0% {
+        transform: translateX(30px);
+    }
+    60% {
+        transform: translateX(0);
+        width: 92px;
+    }
+    100% {
+        transform: translateX(0);
+        width: 60px;
+    }
+}
+
+@keyframes bar-back {
+    0% {
+        color: $maindark;
+        background-color: $white;
+        border-color: $maindark;
+    }
+
+    100% {
+        color: $white;
+        background-color: $maindark;
+        border-color: $white;
+    }
+}
+
+// Input animation
+
+@keyframes input-show {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+// Output animations 
+
+@keyframes output-show {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes output-hide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+
+// Input classes
+
+
+.input__show {
+    animation-name: input-show;
+    animation-duration: .9s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+.input__hide {
+    opacity: 0;
+}
+
+
+.input__abs {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+// Output classes
+
+.output__show {
+    animation-name: output-show;
+    animation-duration: .9s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.output__hide {
+    animation-name: output-hide;
+    animation-duration: .4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+// Forward classes
+
+.bar__forward {
+    animation-name: bar-forward;
+    animation-duration: .6s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.bar__forward-reverse {
+    animation-name: bar-forward;
+    animation-duration: .6s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+.line-move__forward {
+    animation-name: moving-line-forward;
+    animation-duration: .7s;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+// Back classes
+
+.bar__back {
+    animation-name: bar-back;
+    animation-duration: .6s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.bar__back-reverse {
+    animation-name: bar-back;
+    animation-duration: .6s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+.line-move__back {
+    animation-name: moving-line-back;
+    animation-duration: .7s;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-iteration-count: 1;
+    // animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+
