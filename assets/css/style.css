@@ -510,6 +510,7 @@ h6 {
 @use "sass:math";
 body {
   font-family: 'Montserrat';
+  overflow-x: hidden;
 }
 
 .container {
