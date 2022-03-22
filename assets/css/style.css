@@ -417,7 +417,7 @@ h6 {
 
 @use "sass:math";
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 8vh;
 }
 
 .header__inner {
@@ -510,7 +510,8 @@ h6 {
 @use "sass:math";
 body {
   font-family: 'Montserrat';
-  overflow-x: hidden;
+  position: relative;
+  height: 100vh;
 }
 
 .container {
@@ -549,6 +550,9 @@ body {
   .desk__display-none {
     display: block;
   }
+  .header {
+    margin-bottom: 7vh;
+  }
   .header__inner {
     padding: 18px 20px;
     background-color: #00CCC0;
@@ -575,10 +579,26 @@ body {
   .links__item .fa-github {
     color: #00CCC0;
   }
-}
-
-.main__inner {
-  overflow-x: hidden;
+  .main__inner {
+    padding: 0 15px;
+  }
+  #calc-btn {
+    width: 100%;
+    max-width: 254px;
+    color: #ffffff;
+    background-color: #00CCC0;
+    border: 2px solid #00CCC0;
+  }
+  #back-btn {
+    width: 100%;
+    max-width: 254px;
+    color: #ffffff;
+    background-color: #00CCC0;
+    border: 2px solid #00CCC0;
+  }
+  .footer__inner {
+    padding: 0 15px;
+  }
 }
 
 .steps {
@@ -822,4 +842,46 @@ body {
   font-size: 18px;
   line-height: 22px;
   color: #00CCC0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}
+
+.footer__inner {
+  width: 100%;
+  max-width: 1110px;
+}
+
+.footer__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.footer__logo:before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 1110px;
+  height: 3px;
+  background-color: #B0EFEB;
+  border-radius: 2px;
+}
+
+.logo__wrapper {
+  width: 71px;
+  height: 51px;
+  background-color: #ffffff;
+  position: absolute;
 }

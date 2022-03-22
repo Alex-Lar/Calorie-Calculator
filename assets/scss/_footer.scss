@@ -1,0 +1,36 @@
+.footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+
+    &__inner {
+        width: 100%;
+        max-width: $containerWidth;
+    }
+
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            max-width: $containerWidth;
+            height: 3px;
+            background-color: $mainlight;
+            border-radius: 2px;
+        }
+    }
+}
+
+.logo__wrapper {
+    width: 71px;
+    height: 51px;
+    background-color: $white;
+    position: absolute;
+}
