@@ -4,9 +4,12 @@ let backBtn = document.querySelector('#back-btn');
 
 calcBtn.addEventListener('click', function () {
     const result = calcCalorie();
-    showResult(result);
 
-    console.log(result);
+    if (isNaN(parseInt(result))) {
+        showError();
+    } else if (!isNaN(parseInt(result))) {
+        showResult(result);
+    }
 
     hideInputs();
     barForward();
@@ -25,6 +28,7 @@ backBtn.addEventListener('click', function () {
     backBtn.classList.add('common__display-none');
     calcBtn.classList.remove('common__display-none');
 });
+
 
 
 function calcCalorie() {
@@ -53,6 +57,14 @@ function showResult(array) {
     outputText.textContent = `На ${prodWeight} грамм`;
 }
 
+function showError() {
+    const outputTitle = document.querySelector('.output__title');
+    const outputText = document.querySelector('.output__text');
+
+    outputTitle.textContent = `Ошибка!`;
+    outputText.textContent = `Введены не числовые значения!`;
+}
+
 
 function hideInputs() {
     let inputWrapper = document.querySelector('.inputs');
@@ -74,16 +86,6 @@ function showInputs() {
     if (inputWrapper.classList.contains("input__hide")) {
         inputWrapper.classList.remove('input__hide');
     }
-
-     // let inputs = document.querySelectorAll('.input');
-    // for (const input of inputs) {
-    //     input.classList.add('input__show');
-    //     input.style.cursor = 'auto';
-
-    //     if (input.classList.contains("input__hide")) {
-    //         input.classList.remove('input__hide');
-    //     }
-    // }
 }
 
 function barForward() {
@@ -138,4 +140,3 @@ function hideOutput() {
         output.classList.remove('output__show');
     }
 }
-

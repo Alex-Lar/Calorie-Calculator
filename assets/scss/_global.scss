@@ -2,8 +2,12 @@
 
 body {
     font-family: 'Montserrat';
-    position: relative;
+    // position: relative;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 // Container
