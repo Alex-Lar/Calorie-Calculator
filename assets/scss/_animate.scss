@@ -88,7 +88,7 @@
     }
 }
 
-@keyframes output-hide {
+@keyframes hide-elements {
     0% {
         transform: translateX(0);
         opacity: 1;
@@ -114,7 +114,11 @@
 
 
 .input__hide {
-    opacity: 0;
+    animation-name: hide-elements;
+    animation-duration: .4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 
@@ -137,7 +141,7 @@
 }
 
 .output__hide {
-    animation-name: output-hide;
+    animation-name: hide-elements;
     animation-duration: .4s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
@@ -199,7 +203,6 @@
     animation-duration: .7s;
     animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
     animation-iteration-count: 1;
-    // animation-direction: reverse;
     animation-fill-mode: forwards;
 }
 

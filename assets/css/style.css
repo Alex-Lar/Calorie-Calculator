@@ -259,7 +259,7 @@ h6 {
   }
 }
 
-@-webkit-keyframes output-hide {
+@-webkit-keyframes hide-elements {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
@@ -272,7 +272,7 @@ h6 {
   }
 }
 
-@keyframes output-hide {
+@keyframes hide-elements {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
@@ -299,7 +299,16 @@ h6 {
 }
 
 .input__hide {
-  opacity: 0;
+  -webkit-animation-name: hide-elements;
+          animation-name: hide-elements;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .input__abs {
@@ -323,8 +332,8 @@ h6 {
 }
 
 .output__hide {
-  -webkit-animation-name: output-hide;
-          animation-name: output-hide;
+  -webkit-animation-name: hide-elements;
+          animation-name: hide-elements;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-timing-function: ease;
@@ -600,6 +609,11 @@ body {
     color: #ffffff;
     background-color: #00CCC0;
     border: 2px solid #00CCC0;
+  }
+  .footer {
+    padding: 15px 15px;
+    width: 100%;
+    height: auto;
   }
 }
 
